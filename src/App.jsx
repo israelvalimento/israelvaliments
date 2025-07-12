@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>hello</h1>
+      <img src="../public/icv-art.png" alt="" />
     </>
   );
 }
