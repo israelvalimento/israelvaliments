@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -6,6 +7,6 @@
   background-color: #242424;
 }
 
-body {
-  @apply flex items-center justify-center h-dvh bg-[#242424] text-7xl;
+@theme {
+  --font-questrial: "Questrial", system-ui;
 }

@@ -1,7 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+
+import { Home, About } from "./pages/index.js";
+import { Navbar } from "./components/components.js";
+
 function App() {
   return (
     <>
-      <img src="../public/icv-art.png" alt="" />
+      <main>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </main>
     </>
   );
 }
