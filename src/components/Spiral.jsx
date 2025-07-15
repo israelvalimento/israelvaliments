@@ -1,11 +1,11 @@
 import React from "react";
 
-const SpiralSquares = () => {
+export function SpiralSquares() {
   const count = 20; // Number of squares
   const squares = Array.from({ length: count });
 
   return (
-    <div className="absolute opacity-50 right-[15rem] top-[-37rem] scale-x-[-1] scale-y-[-1]">
+    <div className="absolute opacity-50 -z-10 right-[15rem] top-[-37rem] scale-x-[-1] scale-y-[-1]">
       <div className="relative w-full h-screen flex items-center justify-center bg-gray-950">
         {squares.map((_, i) => {
           const size = 400 - i * 15; // Decrease size per step
@@ -28,6 +28,4 @@ const SpiralSquares = () => {
       </div>
     </div>
   );
-};
-
-export default SpiralSquares;
+}

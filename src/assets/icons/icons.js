@@ -7,6 +7,19 @@ import link from "./link-icon.svg";
 import linkedin from "./linkedin-icon.svg";
 import react from "./react-icon.svg";
 import send from "./send-icon.svg";
+import gmail from "./gmail-icon.svg";
 import logo from "./navbar-logo.svg";
 
-export { css, html, js, github, figma, link, linkedin, react, send, logo };
+export {
+  css,
+  html,
+  js,
+  github,
+  figma,
+  link,
+  linkedin,
+  react,
+  send,
+  logo,
+  gmail,
+};

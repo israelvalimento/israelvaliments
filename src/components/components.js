@@ -1,4 +1,5 @@
-import { Navbar } from "./navbar";
-import { Card } from "./Card";
+import { Navbar } from "./Navbar.jsx";
+import { Card } from "./Card.jsx";
+import { SpiralSquares } from "./Spiral.jsx";
 
-export { Navbar, Card };
+export { Navbar, Card, SpiralSquares };
