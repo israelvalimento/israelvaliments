@@ -12,10 +12,31 @@
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
+  from {
+    left: 100%;
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    left: calc(var(--width) * -1);
   }
+}
+
+.frontend img {
+  transition: filter 0.5s;
+  animation-delay: calc(
+    (10s / var(--quantity)) * (var(--position) - 1) - 10s
+  ) !important;
+}
+
+.slider {
+  mask-image: linear-gradient(to right, transparent, #000 50% 10%, transparent);
+}
+
+.slider:hover img {
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+.slider img:hover {
+  filter: grayscale(0);
 }

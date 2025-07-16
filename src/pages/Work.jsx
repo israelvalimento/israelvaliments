@@ -4,7 +4,7 @@ import { link } from "../assets/icons/icons";
 export function Work() {
   return (
     <main className="flex items-center justify-center w-dvw h-dvh">
-      <section className="border-1 p-34  grid grid-cols-2 grid-rows-auto gap-5 h-dvh w-dvw ">
+      <section className=" p-34  grid grid-cols-2 grid-rows-auto gap-5 h-dvh w-dvw ">
         <Card className="col-start-1 row-span-2 border-1 p-5  rounded-2xl">
           <section className="flex flex-col gap-5 h-full">
             <img src="/myri-screenshot.png" alt="myri-screenshot" />
