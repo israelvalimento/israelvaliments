@@ -1,27 +1,10 @@
 import React from "react";
 import { html, css, js, react, figma } from "../assets/icons/icons.js";
+import { Aboutme } from "../components/components.js";
 export function About() {
   return (
     <main className="flex flex-col gap-5 items-center justify-center h-dvh w-m-[1200px_90vw]">
-      <section className="grid grid-cols-3 border-1">
-        <p className="col-start-1 place-self-center">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex
-          consectetur quo earum veritatis voluptates ut laudantium molestias
-          inventore maxime enim illo fugiat iusto, a similique officiis numquam
-          expedita recusandae id?
-        </p>
-        <p className="col-start-3">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex
-          consectetur quo earum veritatis voluptates ut laudantium molestias
-          inventore maxime enim illo fugiat iusto, a similique officiis numquam
-          expedita recusandae id?
-        </p>
-        <img
-          className="mt-32 col-start-2"
-          src="/icv-art.png"
-          alt="myselfportrait-digitalart"
-        />
-      </section>
+      <Aboutme></Aboutme>
       <section
         className="slider flex items-center justify-center w-1/4  "
         style={{

@@ -1,10 +1,13 @@
 import cardLogo from "/card-logo.png";
 import { Card, SpiralSquares } from "../components/components";
-
-export function Home() {
+export function Home({ isRotate }) {
   return (
-    <main className=" flex items-center justify-center h-dvh">
-      <Card className="bg-[#3d3d3d] drop-shadow-md p-3.5 overflow-clip w-1/4 h-1/4">
+    <main
+      className={`flex items-center justify-center h-dvh perspective transform-3d`}
+    >
+      <Card
+        className={`${isRotate} bg-[#3d3d3d]  drop-shadow-md p-3.5 overflow-clip w-1/4 h-1/4 transition-transform duration-1000 `}
+      >
         <SpiralSquares></SpiralSquares>
 
         <section className="relative font-questrial text-lg text-nowrap grid grid-cols-3 capitalize w-full h-full">

@@ -1,8 +1,7 @@
 import React from "react";
 import { logo } from "../assets/icons/icons.js";
 import { Link, useLocation } from "react-router-dom";
-
-export function Navbar() {
+export function Navbar({ home, contact }) {
   const location = useLocation();
   return (
     <nav
@@ -19,6 +18,7 @@ export function Navbar() {
 "
         >
           <Link
+            onClick={home}
             to="/home"
             className={
               location.pathname === "/home"
@@ -30,6 +30,7 @@ export function Navbar() {
           </Link>
 
           <Link
+            onClick={contact}
             to="/contact"
             className={
               location.pathname === "/contact"
