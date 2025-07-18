@@ -1,13 +1,15 @@
 import React from "react";
 import { Card, SpiralSquares } from "../components/components.js";
 import { linkedin, github, gmail } from "../assets/icons/icons.js";
-export function Contact() {
+export function Contact({ isRotate }) {
   return (
-    <main className=" flex items-center justify-center h-dvh">
-      <Card className="bg-[#3d3d3d] drop-shadow-md p-3.5 overflow-clip w-1/4 h-1/4 ">
+    <main className="perspective transform-3d flex h-dvh items-center justify-center">
+      <Card
+        className={`${isRotate} -rotate-y-180 perspective transform-3d h-1/4 w-1/4 overflow-clip bg-[#3d3d3d] p-3.5 drop-shadow-md transition-transform duration-1000 ease-linear`}
+      >
         <SpiralSquares></SpiralSquares>
-        <section className="grid grid-cols-2 grid-rows-2 h-full w-full">
-          <section className="row-start-1  flex flex-col gap-5 [&>div]:flex [&>div]:gap-3.5">
+        <section className="grid h-full w-full grid-cols-2 grid-rows-2">
+          <section className="row-start-1 flex flex-col gap-5 [&>div]:flex [&>div]:gap-3.5">
             <div>
               <img src={linkedin} alt="linkedin-icon" />
               <p>https://linkedin.com/israelvalimento</p>
@@ -21,11 +23,11 @@ export function Contact() {
             </div>
           </section>
           <img
-            className="size-18 mt-5 mr-14.5 opacity-80 place-self-center invert col-start-1 row-start-2"
+            className="size-18 mr-14.5 col-start-1 row-start-2 mt-5 place-self-center opacity-80 invert"
             src="/qrcode-icon.svg"
             alt="qrcode-icon"
           />
-          <button className="col-start-2 row-start-2 place-self-end cursor-pointer px-5 hover:bg-[#5252529f] py-1.5 leading-5  border-1">
+          <button className="border-1 col-start-2 row-start-2 cursor-pointer place-self-end px-5 py-1.5 leading-5 hover:bg-[#5252529f]">
             Connect
           </button>
         </section>

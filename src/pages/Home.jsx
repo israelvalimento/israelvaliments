@@ -3,20 +3,20 @@ import { Card, SpiralSquares } from "../components/components";
 export function Home({ isRotate }) {
   return (
     <main
-      className={`flex items-center justify-center h-dvh perspective transform-3d`}
+      className={`perspective transform-3d flex h-dvh items-center justify-center`}
     >
       <Card
-        className={`${isRotate} bg-[#3d3d3d]  drop-shadow-md p-3.5 overflow-clip w-1/4 h-1/4 transition-transform duration-1000 `}
+        className={`${isRotate} perspective transform-3d h-1/4 w-1/4 overflow-clip bg-[#3d3d3d] p-3.5 drop-shadow-md transition-transform duration-1000 ease-linear`}
       >
         <SpiralSquares></SpiralSquares>
 
-        <section className="relative font-questrial text-lg text-nowrap grid grid-cols-3 capitalize w-full h-full">
+        <section className="font-questrial relative grid h-full w-full grid-cols-3 text-nowrap text-lg capitalize">
           <img
-            className="col-start-1 opacity-80 absolute top-[-2.5rem] left-[-3.5rem] size-62"
+            className="size-62 absolute left-[-3.5rem] top-[-2.5rem] col-start-1 opacity-80"
             src={cardLogo}
             alt=""
           />
-          <h1 className="col-start-2 text-xl place-content-center ">
+          <h1 className="col-start-2 place-content-center text-xl">
             Front-End Developer
           </h1>
           <h2 className="place-self-end">israel valimento</h2>
