@@ -3,47 +3,52 @@ import { Home, About, Contact, Work } from "./pages/index.js";
 import { Navbar } from "./components/components.js";
 import { useState } from "react";
 function App() {
-  const navigate = useNavigate();
+  const [isFlip, setIsFlip] = useState(true);
   const location = useLocation();
-  const [homeCard, setHomecard] = useState("");
-  const [contactCard, setContactcard] = useState("");
-  // const clickHandler = () => {
-  //   if (location.pathname === "/contact") {
-  //     setRotate("rotate-y-180");
-  //     setTimeout(() => {
-  //       navigate("/contact");
-  //     }, 1000);
-  //   }
-  // };
-  const contact_clickHandler = () => {
-    setHomecard("rotate-y-180");
+  const path = location.pathname;
+  const navigate = useNavigate();
 
-    location.pathname === "/about" || location.pathname === "/work"
-      ? (navigate("/contact"), setContactcard("rotate-y-0"))
-      : setTimeout(() => {
-          navigate("/contact");
-          setContactcard("rotate-y-0");
-        }, 610);
-  };
-  const home_clickHandler = () => {
-    setContactcard("-rotate-y-180");
+  const homeHandler = () => {
+    if (path === "/home") return;
+    if (path === "/contact") {
+      setIsFlip((prev) => !prev);
 
-    location.pathname === "/about" || location.pathname === "/work"
-      ? (navigate("/home"), setHomecard("rotate-y-0"))
-      : setTimeout(() => {
-          navigate("/home");
-          setHomecard("-rotate-y-0");
-        }, 610);
+      navigate("/home");
+    } else {
+      navigate("/home");
+    }
   };
+
+  const contactHandler = () => {
+    if (path === "/contact") return;
+
+    if (path === "/home") {
+      setIsFlip((prev) => !prev);
+      navigate("/contact");
+    } else {
+      navigate("/contact");
+    }
+  };
+
   return (
     <main>
-      <Navbar contact={contact_clickHandler} home={home_clickHandler}></Navbar>
-      <Routes>
-        <Route path="/Home" element={<Home isRotate={homeCard} />} />
-        <Route path="/Contact" element={<Contact isRotate={contactCard} />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Work" element={<Work />} />
-      </Routes>
+      <Navbar home={homeHandler} contact={contactHandler}></Navbar>
+
+      {path === "/home" || path === "/contact" ? (
+        <section className="flex h-screen w-screen items-center justify-center">
+          <div
+            className={`${isFlip ? "rotate-y-0" : "rotate-y-180"} perspective-distant h-57 relative w-[32rem] transition-all duration-1000 [transform-style:preserve-3d]`}
+          >
+            <Home />
+            <Contact />
+          </div>
+        </section>
+      ) : (
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
+        </Routes>
+      )}
     </main>
   );
 }

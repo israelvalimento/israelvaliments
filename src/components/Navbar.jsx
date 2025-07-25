@@ -13,8 +13,9 @@ export function Navbar({ home, contact }) {
           src={logo}
           alt="my-logo"
         />
-        <div className="text-md w-1/1 flex items-center justify-center [&>a]:rounded-full [&>a]:px-6 [&>a]:py-2 [&>a]:leading-5 [&>a]:hover:bg-[#7a7a7a6c] [&>button]:rounded-full [&>button]:px-6 [&>button]:py-2 [&>button]:leading-5 [&>button]:hover:bg-[#7a7a7a6c]">
+        <div className="text-md w-1/1 flex items-center justify-center [&>a]:rounded-full [&>a]:px-6 [&>a]:py-2 [&>a]:leading-5 [&>a]:hover:bg-[#7a7a7a6c] [&>button]:cursor-pointer [&>button]:rounded-full [&>button]:px-6 [&>button]:py-2 [&>button]:leading-5 [&>button]:hover:bg-[#7a7a7a6c]">
           <button
+            to="/Home"
             onClick={home}
             className={
               location.pathname === "/home"
@@ -26,6 +27,7 @@ export function Navbar({ home, contact }) {
           </button>
 
           <button
+            to="/contact"
             onClick={contact}
             className={
               location.pathname === "/contact"

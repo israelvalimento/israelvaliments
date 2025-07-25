@@ -4,7 +4,8 @@
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  background: #242424;
 }
 
 @theme {
@@ -65,7 +66,7 @@
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
     animation: draw-line 1s linear forwards;
-    animation-delay: calc((1s * var(--position)) - 1s); /* 0 s for pos 1 */
+    animation-delay: calc((1s * var(--position)) - 1s);
   }
 
   /* text */
