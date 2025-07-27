@@ -9,6 +9,7 @@ import react from "./react-icon.svg";
 import send from "./send-icon.svg";
 import gmail from "./gmail-icon.svg";
 import logo from "./navbar-logo.svg";
+import close from "./close-icon.svg";
 
 export {
   css,
@@ -22,4 +23,5 @@ export {
   send,
   logo,
   gmail,
+  close,
 };

@@ -1,12 +1,14 @@
 import React from "react";
 
-export function SpiralSquares() {
+export function SpiralSquares({ className = "" }) {
   const count = 20; // Number of squares
   const squares = Array.from({ length: count });
 
   return (
-    <div className="absolute opacity-50 -z-10 right-[15rem] top-[-37rem] scale-x-[-1] scale-y-[-1]">
-      <div className="relative w-full h-screen flex items-center justify-center bg-gray-950">
+    <div
+      className={`${className} absolute right-[15rem] top-[-37rem] -z-10 scale-x-[-1] scale-y-[-1] opacity-50`}
+    >
+      <div className="relative flex h-screen w-full items-center justify-center">
         {squares.map((_, i) => {
           const size = 400 - i * 15; // Decrease size per step
           const rotate = i * 10; // Rotate incrementally

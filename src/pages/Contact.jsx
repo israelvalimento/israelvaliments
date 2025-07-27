@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, SpiralSquares } from "../components/components.js";
 import { linkedin, github, gmail } from "../assets/icons/icons.js";
-export function Contact() {
+export function Contact({ closeModal }) {
   return (
     <Card
       className={`backface-hidden rotate-y-180 absolute h-full w-full overflow-clip bg-[#3d3d3d] p-3.5 drop-shadow-md`}
@@ -26,7 +26,10 @@ export function Contact() {
           src="/qrcode-icon.svg"
           alt="qrcode-icon"
         />
-        <button className="border-1 col-start-2 row-start-2 cursor-pointer place-self-end px-5 py-1.5 leading-5 hover:bg-[#5252529f]">
+        <button
+          onClick={closeModal}
+          className="border-1 col-start-2 row-start-2 cursor-pointer place-self-end px-5 py-1.5 leading-5 hover:bg-[#5252529f]"
+        >
           Connect
         </button>
       </section>
